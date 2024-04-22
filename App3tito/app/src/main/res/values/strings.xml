@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">Appetito</string>
+    <string name="name">Név</string>
+    <string name="password">Jelszó</string>
+    <string name="login">Bejelentkezés</string>
+    <string name="registration">Regisztráció</string>
+    <string name="user_name">Felhasználónév</string>
+    <string name="email_address">E-mail cím</string>
+    <string name="password_again">Jelszó megerősítés</string>
+    <string name="cancel">Mégse</string>
+
+
+
+
+
+    <string-array name="phone_modes">
+        <item>Mobil</item>
+        <item>Munkahelyi</item>
+    </string-array>
+    <string name="default_web_client_id">AIzaSyBJc489FB8vM-ys575ejhhbPNIshENyIbw
+</string>
+    <string name="login_text">A folytatáshoz be kell jelentkezned!\nHa még nem regisztráltál regisztrálj!</string>
+    <string name="email">Email cím</string>
+    <string name="vendeg">Csak szétnézek</string>
+    <string name="item_placeholder">Név</string>
+    <string name="megrendel">Megrendel</string>
+    <string name="delete">Törlés</string>
+    <string name="vasarl_folytat">Vásárlás folytatása</string>
+    <string name="kosarba">Kosárba</string>
+
+
+    <string-array name="etel_nevek">
+        <item>Margherita</item>
+        <item>Marinara</item>
+        <item>Pizza Capricciosa</item>
+        <item>Quattro</item>
+        <item>Pizza Diavola</item>
+        <item>Quattro Formaggi</item>
+        <item>Pizza Boscaiola</item>
+        <item>Prosciutto e funghi</item>
+        <item>Oliva</item>
+        <item>Ortolana – Vegetariana</item>
+    </string-array>
+
+    <array name="etel_kepek">
+        <item>@drawable/margherita</item>
+        <item>@drawable/marinara</item>
+        <item>@drawable/capricciosa</item>
+        <item>@drawable/quattro</item>
+        <item>@drawable/diavola</item>
+        <item>@drawable/formaggi</item>
+        <item>@drawable/boscaiola</item>
+        <item>@drawable/prosciutto</item>
+        <item>@drawable/oliva</item>
+        <item>@drawable/ortolana</item>
+    </array>
+
+
+
+    <array name="etel_ertekelesek">
+        <item>4</item>
+        <item>5</item>
+        <item>4</item>
+        <item>4.5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>5</item>
+        <item>2.5</item>
+        <item>5</item>
+        <item>3</item>
+    </array>
+
+    <array name="etel_arak">
+        <item>3000 Ft</item>
+        <item>3000 Ft</item>
+        <item>3200 Ft</item>
+        <item>3150 Ft</item>
+        <item>3000 Ft</item>
+        <item>2900 Ft</item>
+        <item>3050 Ft</item>
+        <item>3130 Ft</item>
+        <item>3025 Ft</item>
+        <item>2400 Ft</item>
+
+    </array>
+
+    <string-array name="sort_spinner">
+        <item>Növekvő ár</item>
+        <item>Csökkenő ár</item>
+    </string-array>
+
+    <string-array name="limit">
+        <item>10</item>
+        <item>1</item>
+    </string-array>
+
+
+
+</resources>
