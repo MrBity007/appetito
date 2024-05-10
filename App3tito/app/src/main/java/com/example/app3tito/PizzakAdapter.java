@@ -65,12 +65,9 @@ public class PizzakAdapter extends RecyclerView.Adapter<PizzakAdapter.ViewHolder
 
         Button megveszemButton = holder.itemView.findViewById(R.id.megveszem);
 
-        // Set click listener for the "megveszem" button
         megveszemButton.setOnClickListener(v -> {
-            // Add the selected item to the "Kosar" collection
             addItemToCart(currentItem);
 
-            // Update the cart icon in the activity
             ((PizzaListActivity) mContext).updateAlertIcon();
         });
     }
@@ -86,15 +83,23 @@ public class PizzakAdapter extends RecyclerView.Adapter<PizzakAdapter.ViewHolder
             itemData.put("kep", etel.getKep());
             itemData.put("csillag", etel.getCsillag()); // Assuming "csillag" is the rating value
 
-            mKosar.document(userId).collection("user_kosar").add(itemData)
-                    .addOnSuccessListener(documentReference -> {
-                        Log.d("EtelListActivity", "Item added to cart: " + documentReference);
-                    })
+
+            String documentId = mKosar.document().getId(); // Generate a random document ID
+
+            PizzakCart cartItem = new PizzakCart(documentId, etel.getName(), etel.getAr(), etel.getCsillag(), etel.getKep());
+
+            mKosar.document(userId).collection("user_kosar").document(documentId).set(cartItem)
+                    .addOnSuccessListener(aVoid -> {
+                        Log.d("EtelListActivity", "Item added to cart with ID: " + documentId);
+
+                     })
                     .addOnFailureListener(e -> {
                         Log.w("EtelListActivity", "Failed to add item to cart");
                     });
         }
     }
+
+
 
     @Override
     public int getItemCount() {
