@@ -73,7 +73,8 @@ public class PizzaListActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mAdapter);
 
         mFirestore = FirebaseFirestore.getInstance();
-        mEtelek = mFirestore.collection("Etelek");
+        mEtelek = mFirestore.collection("Etelek").document(user.getUid())
+                .collection("user_etelek");
         mKosar = FirebaseFirestore.getInstance().collection("kosar");
 
         queryData();
@@ -114,14 +115,13 @@ public class PizzaListActivity extends AppCompatActivity {
                 getResources().obtainTypedArray(R.array.etel_kepek);
         TypedArray etelRate = getResources().obtainTypedArray(R.array.etel_ertekelesek);
 
-
         for (int i = 0; i < etelList.length; i++) {
             mEtelek.add(new Pizzak(etelList[i], etelar[i], etelRate.getFloat(i, 0),
                     etelkepek.getResourceId(i, 0)));
         }
+
         etelkepek.recycle();
     }
-
 
     private void queryData() {
         mEtelAdtok.clear();
@@ -139,6 +139,7 @@ public class PizzaListActivity extends AppCompatActivity {
             mAdapter.notifyDataSetChanged();
         });
     }
+
     private void szures(){
         String sortBy = "ar"; // Alapértelmezett rendezés ár szerint
         Query.Direction direction = Query.Direction.ASCENDING; // Alapértelmezett rendezési irány: növekvő
@@ -202,9 +203,11 @@ public class PizzaListActivity extends AppCompatActivity {
 
 
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.log_out_button) {
+
             //kijelentjkezés
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(this, MainActivity.class);
